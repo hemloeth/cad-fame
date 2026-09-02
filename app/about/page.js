@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { 
   Award, 
   Globe2, 
@@ -21,7 +20,12 @@ import {
   Compass,
   ArrowUpRight,
   TrendingUp,
-  HeartHandshake
+  HeartHandshake,
+  Activity,
+  Play,
+  Flame,
+  Radio,
+  Maximize2
 } from "lucide-react";
 import TopNavBar from "@/components/layout/TopNavBar";
 import Footer from "@/components/layout/Footer";
@@ -29,6 +33,14 @@ import TrialModal from "@/components/modals/TrialModal";
 
 export default function AboutPage() {
   const [trialOpen, setTrialOpen] = useState(false);
+  const [activeDomain, setActiveDomain] = useState("structures");
+
+  const domains = [
+    { id: "structures", label: "Structural Mechanics", solver: "Ansys Mechanical", metric: "124.5 kN Yield Stress" },
+    { id: "fluids", label: "Fluids & Aerodynamics", solver: "Ansys Fluent / CFX", metric: "Mach 5.2 Shock Flow" },
+    { id: "em", label: "Electromagnetics & RF", solver: "Ansys HFSS / Maxwell", metric: "77 GHz Radar Array" },
+    { id: "digital-twins", label: "AI & Digital Twins", solver: "Ansys Twin Builder", metric: "Real-time ROM (99.9%)" },
+  ];
 
   const stats = [
     { value: "40+", label: "Years of Experience", sub: "Founded in 1982" },
@@ -79,50 +91,136 @@ export default function AboutPage() {
       />
 
       <main className="flex-1">
-        {/* 1. Hero Section (Deep Navy Theme) */}
-        <section className="relative w-full bg-[#020b1e] text-white py-20 lg:py-28 overflow-hidden border-b border-white/10">
-          {/* Ambient Glows */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0066ff]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-[#38bdf8]/15 rounded-full blur-3xl pointer-events-none" />
+        {/* 1. Ultra-Modern Premium Hero Section */}
+        <section className="relative w-full bg-[#010816] text-white pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-white/10">
+          {/* Futuristic Background Grid & Ambient Volumetric Glows */}
+          <div 
+            className="absolute inset-0 opacity-15 pointer-events-none"
+            style={{
+              backgroundImage: "radial-gradient(#38bdf8 1px, transparent 1px), radial-gradient(#0057b8 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+              backgroundPosition: "0 0, 20px 20px"
+            }}
+          />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#0057b8]/25 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#38bdf8]/15 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8 relative z-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-[#38bdf8] mb-6 backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>ABOUT SIMUTECH APAC</span>
+            {/* Top Row: Hero Text & 3D Hologram Stage */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              {/* Left Column: Vision & Action */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#001f4d]/80 border border-[#0057b8]/50 text-xs font-bold text-[#38bdf8] backdrop-blur-md shadow-lg shadow-[#0057b8]/20">
+                  <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-ping" />
+                  <span>ANSYS ELITE CHANNEL PARTNER APAC</span>
+                </div>
+
+                <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-white tracking-tight leading-[1.12]">
+                  Pioneering the Science of <br />
+                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#60a5fa] to-[#93c5fd] bg-clip-text text-transparent">
+                    Virtual Engineering.
+                  </span>
+                </h1>
+
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
+                  For over four decades, <strong className="text-white font-semibold">SimuTech APAC</strong> has empowered ambitious aerospace, automotive, energy, and high-tech leaders to transform complex multi-physics challenges into decisive market advantages.
+                </p>
+
+                {/* Physics Domain Selector Pills */}
+                <div className="space-y-2 pt-2">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    Multi-Physics Domains
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {domains.map((d) => (
+                      <button
+                        key={d.id}
+                        onClick={() => setActiveDomain(d.id)}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          activeDomain === d.id
+                            ? "bg-[#0057b8] text-white border border-[#38bdf8] shadow-md shadow-[#0057b8]/40"
+                            : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
+                        }`}
+                      >
+                        {d.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <button
+                    onClick={() => setTrialOpen(true)}
+                    className="bg-[#0057b8] hover:bg-[#004493] text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all shadow-xl shadow-[#0057b8]/40 active:scale-95 cursor-pointer"
+                  >
+                    <span>Partner With Us</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+
+                  <button
+                    onClick={() => setTrialOpen(true)}
+                    className="bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full flex items-center gap-2 transition-all cursor-pointer"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-white text-white" />
+                    <span>Watch Overview</span>
+                  </button>
+                </div>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-                Pioneering Simulation Excellence Since 1982.
-              </h1>
+              {/* Right Column: 3D Holographic Stage with Live HUD Telemetry */}
+              <div className="lg:col-span-6">
+                <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-2 group">
+                  {/* Holographic Aerothermal Simulation Visual */}
+                  <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
+                    <img
+                      src="/about-hero-hologram.jpg"
+                      alt="SimuTech 3D Holographic Aerothermal Multi-Physics Engine Simulation"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl font-normal">
-                As the leading <span className="text-white font-bold">Ansys Elite Channel Partner</span> in the Asia-Pacific region, SimuTech empowers visionary engineering teams to solve complex structural, fluid, electromagnetic, and digital twin challenges.
-              </p>
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#000d24]/90 via-transparent to-[#000d24]/40" />
 
-              <div className="flex flex-wrap gap-4">
-                <button
-                  onClick={() => setTrialOpen(true)}
-                  className="bg-[#0057b8] hover:bg-[#004493] text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all shadow-lg shadow-[#0057b8]/30 active:scale-95 cursor-pointer"
-                >
-                  <span>Partner With Us</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                    {/* Floating Top-Left Status Badge */}
+                    <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#001738]/85 border border-[#38bdf8]/40 rounded-full px-3.5 py-1.5 text-[11px] font-mono text-[#38bdf8] backdrop-blur-md shadow-lg">
+                      <Activity className="w-3.5 h-3.5 animate-pulse text-[#38bdf8]" />
+                      <span>LIVE SOLVER RUNNING</span>
+                    </div>
 
-                <Link
-                  href="/products"
-                  className="bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-full transition-all"
-                >
-                  Explore Software Portfolio
-                </Link>
+                    {/* Floating Top-Right Solver Pill */}
+                    <div className="absolute top-4 right-4 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 text-[11px] font-mono text-white backdrop-blur-md">
+                      {domains.find(d => d.id === activeDomain)?.solver}
+                    </div>
+
+                    {/* Floating Bottom HUD Panel */}
+                    <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#00122e]/90 border border-white/15 backdrop-blur-md flex items-center justify-between">
+                      <div>
+                        <div className="text-[10px] font-mono text-[#38bdf8] uppercase tracking-wider font-bold">
+                          Selected Physics Benchmark
+                        </div>
+                        <div className="text-sm font-bold text-white">
+                          {domains.find(d => d.id === activeDomain)?.metric}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-[10px] text-slate-400 font-mono">Convergence</div>
+                        <div className="text-xs font-bold text-emerald-400">99.99% Rigor</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* 4 Key Metric Badges */}
+            {/* Bottom 4 Modern KPI Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16 pt-12 border-t border-white/10">
               {stats.map((s) => (
-                <div key={s.label} className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#38bdf8] tracking-tight mb-1">
+                <div 
+                  key={s.label} 
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#38bdf8]/40 hover:bg-white/10 transition-all backdrop-blur-sm group"
+                >
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#38bdf8] tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">
                     {s.value}
                   </div>
                   <div className="text-sm font-bold text-white mb-0.5">{s.label}</div>
@@ -142,7 +240,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#e2e8f0] group">
                   <img
                     src="/about-cadfem-team.jpg"
-                    alt="CADFEM engineers collaborating on simulation models"
+                    alt="SimuTech engineers collaborating on simulation models"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000d24]/80 via-transparent to-transparent" />
@@ -291,7 +389,7 @@ export default function AboutPage() {
                 <div className="pt-4">
                   <button
                     onClick={() => setTrialOpen(true)}
-                    className="bg-[#000d24] hover:bg-[#001738] text-white text-xs font-bold px-6 py-3 rounded-full flex items-center gap-2 shadow-sm transition-all"
+                    className="bg-[#000d24] hover:bg-[#001738] text-white text-xs font-bold px-6 py-3 rounded-full flex items-center gap-2 shadow-sm transition-all cursor-pointer"
                   >
                     <span>Contact Your Regional Hub</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -356,7 +454,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#e2e8f0] group">
                   <img
                     src="/about-cadfem-innovation.jpg"
-                    alt="CADFEM Innovation and Supercomputing Lab"
+                    alt="SimuTech Innovation and Supercomputing Lab"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000d24]/80 via-transparent to-transparent" />
