@@ -36,7 +36,7 @@ export default function WebinarsSection({ onOpenRegister }) {
 
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-[1.12] tracking-tight">
             Stay ahead <br />
-            with CADFEM.
+            with SimuTech.
           </h2>
 
           <p className="text-sm text-slate-300 leading-relaxed font-normal max-w-sm">

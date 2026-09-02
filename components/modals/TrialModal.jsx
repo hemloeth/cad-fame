@@ -38,7 +38,7 @@ export default function TrialModal({ isOpen, onClose, defaultService = "Ansys Si
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#ebeef3] bg-[#f7f9ff]">
           <div>
             <span className="text-[10px] uppercase font-bold tracking-widest font-mono text-[#0057b8]">
-              CADFEM APAC Trial & Inquiry
+              SimuTech APAC Trial & Inquiry
             </span>
             <h3 className="text-lg font-bold text-[#181c20] font-['Montserrat']">
               Request Free Trial / Consultation
@@ -63,7 +63,7 @@ export default function TrialModal({ isOpen, onClose, defaultService = "Ansys Si
                 Request Received
               </h4>
               <p className="text-xs text-[#424752] max-w-sm mx-auto leading-relaxed">
-                Thank you! A CADFEM simulation application specialist in your region will reach out within 1 business day with trial access and technical guidance.
+                Thank you! A SimuTech simulation application specialist in your region will reach out within 1 business day with trial access and technical guidance.
               </p>
               <div className="pt-4">
                 <button

@@ -138,7 +138,7 @@ export default function ProductsPage() {
                 Explore Our Full Product Range
               </h1>
               <p className="text-base text-[#d8e2ff] mb-8 max-w-xl leading-relaxed">
-                Discover CADFEM&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics, optics, and mission engineering.
+                Discover SimuTech&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics, optics, and mission engineering.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button
@@ -162,7 +162,7 @@ export default function ProductsPage() {
             {/* Elite Stats Card */}
             <div className="hidden lg:block bg-white text-[#181c20] rounded p-8 shadow-xl max-w-sm w-full border border-[#c2c6d4]/40">
               <div className="font-bold text-base text-[#0057b8] mb-1 font-['Montserrat'] uppercase tracking-wider text-xs">
-                CADFEM Group Benchmark
+                SimuTech Group Benchmark
               </div>
               <div className="text-sm font-semibold text-[#181c20] mb-6">
                 40+ Years Ansys Simulation Excellence

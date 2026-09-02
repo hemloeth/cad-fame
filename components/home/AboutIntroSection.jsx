@@ -25,16 +25,16 @@ export default function AboutIntroSection({ onOpenContact }) {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.18] font-['Montserrat'] tracking-tight text-white">
-            CADFEM APAC — Technology Leader and Pioneer Of{" "}
+            SimuTech APAC — Technology Leader and Pioneer Of{" "}
             <span className="text-[#38bdf8] block mt-1">Simulation Solution</span>
           </h2>
 
           <div className="space-y-4 text-xs sm:text-sm text-[#d8e2ff]/90 leading-relaxed font-normal max-w-2xl">
             <p>
-              CADFEM APAC is an <strong className="text-white font-semibold">Ansys Elite Channel Partner</strong> and one of the leading technology providers of engineering simulation solutions in the Asia-Pacific region. We empower engineers, designers and researchers to harness the full potential of simulation in product development.
+              SimuTech APAC is an <strong className="text-white font-semibold">Ansys Elite Channel Partner</strong> and one of the leading technology providers of engineering simulation solutions in the Asia-Pacific region. We empower engineers, designers and researchers to harness the full potential of simulation in product development.
             </p>
             <p>
-              Founded on decades of expertise, the CADFEM Group has been delivering Finite Element Method (FEM) simulations since 1982. Our team brings together deep multi-physics knowledge with industry-specific best practices to solve the toughest engineering problems.
+              Founded on decades of expertise, the SimuTech Group has been delivering Finite Element Method (FEM) simulations since 1982. Our team brings together deep multi-physics knowledge with industry-specific best practices to solve the toughest engineering problems.
             </p>
             <p>
               As an active member of the <strong className="text-white font-semibold">TechNet Alliance</strong>, we collaborate with a global network of simulation specialists to drive innovation in CAE, software development and engineering services worldwide.

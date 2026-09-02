@@ -102,7 +102,7 @@ export default function ServicesPage() {
             <div className="inline-flex items-center gap-2 bg-[#ebeef3] px-3 py-1 rounded-sm mb-6 border border-[#c2c6d4]/40">
               <span className="w-2 h-2 rounded-full bg-[#0057b8] animate-pulse" />
               <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#424752]">
-                CADFEM Services Division
+                SimuTech Services Division
               </span>
             </div>
 
@@ -270,7 +270,7 @@ export default function ServicesPage() {
               Ready to Solve Your Most Demanding Simulation Challenge?
             </h2>
             <p className="text-sm text-[#d8e2ff] mb-8 leading-relaxed">
-              Connect with CADFEM APAC specialists. We will scope your project and provide a transparent timeline and technical roadmap.
+              Connect with SimuTech APAC specialists. We will scope your project and provide a transparent timeline and technical roadmap.
             </p>
             <button
               onClick={() => {

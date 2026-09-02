@@ -9,10 +9,10 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="col-span-1">
           <div className="font-extrabold text-2xl text-white mb-4 tracking-tighter font-['Montserrat']">
-            CADFEM
+            SimuTech
           </div>
           <p className="mb-6 opacity-80 text-xs leading-relaxed max-w-xs text-[#adc7ff]">
-            A brand of the CADFEM Group.<br />
+            A brand of the SimuTech Group.<br />
             Engineering simulation solutions, services and skills — for ambitious teams across the Asia-Pacific region.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="mt-12 pt-8 border-t border-white/10 px-4 sm:px-8 max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center text-xs opacity-70">
-        <p>© {new Date().getFullYear()} CADFEM APAC. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SimuTech APAC. All rights reserved.</p>
         <div className="flex gap-4 mt-4 md:mt-0">
           <span className="flex items-center gap-1">
             <Globe className="w-3.5 h-3.5" /> Asia-Pacific Region

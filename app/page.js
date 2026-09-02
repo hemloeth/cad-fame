@@ -231,7 +231,7 @@ export default function HomePage() {
                       The Invisible Simulations Behind Products You Use
                     </h3>
                     <p className="text-xs text-[#424752] leading-relaxed line-clamp-3">
-                      Modern engineering simulation helps teams test products virtually before they are built, improving safety, performance, and reliability. From washing machines to electric vehicles, CADFEM enables smarter design.
+                      Modern engineering simulation helps teams test products virtually before they are built, improving safety, performance, and reliability. From washing machines to electric vehicles, SimuTech enables smarter design.
                     </p>
                   </div>
                 </div>

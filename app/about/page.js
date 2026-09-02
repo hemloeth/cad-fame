@@ -89,7 +89,7 @@ export default function AboutPage() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-[#38bdf8] mb-6 backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>ABOUT CADFEM APAC</span>
+                <span>ABOUT SIMUTECH APAC</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
@@ -97,7 +97,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl font-normal">
-                As the leading <span className="text-white font-bold">Ansys Elite Channel Partner</span> in the Asia-Pacific region, CADFEM empowers visionary engineering teams to solve complex structural, fluid, electromagnetic, and digital twin challenges.
+                As the leading <span className="text-white font-bold">Ansys Elite Channel Partner</span> in the Asia-Pacific region, SimuTech empowers visionary engineering teams to solve complex structural, fluid, electromagnetic, and digital twin challenges.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -169,11 +169,11 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  Founded in 1982 during the dawn of numerical engineering simulation, CADFEM was among the earliest organizations to recognize the transformational power of FEA and CFD in accelerating physical product development.
+                  Founded in 1982 during the dawn of numerical engineering simulation, SimuTech was among the earliest organizations to recognize the transformational power of FEA and CFD in accelerating physical product development.
                 </p>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  Today, CADFEM APAC serves as the trusted simulation partner for Fortune 500 defense contractors, cutting-edge EV startups, semiconductor fabs, and academic institutions across the Asia-Pacific region. We provide everything from software licensing and workflow automation to custom PyAnsys script engineering and enterprise training.
+                  Today, SimuTech APAC serves as the trusted simulation partner for Fortune 500 defense contractors, cutting-edge EV startups, semiconductor fabs, and academic institutions across the Asia-Pacific region. We provide everything from software licensing and workflow automation to custom PyAnsys script engineering and enterprise training.
                 </p>
 
                 <div className="space-y-3 pt-2">
@@ -336,7 +336,7 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  CADFEM operates state-of-the-art supercomputing research labs to benchmark new Ansys solvers, train ROMs (Reduced Order Models), and simulate massive multi-physics assemblies with billions of degrees of freedom.
+                  SimuTech operates state-of-the-art supercomputing research labs to benchmark new Ansys solvers, train ROMs (Reduced Order Models), and simulate massive multi-physics assemblies with billions of degrees of freedom.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
@@ -420,7 +420,7 @@ export default function AboutPage() {
               Ready to Accelerate Your Simulation Workflows?
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8 max-w-xl mx-auto font-normal">
-              Connect with CADFEM APAC simulation specialists for a tailored technical consultation, custom PyAnsys proof-of-concept, or 30-day Ansys evaluation license.
+              Connect with SimuTech APAC simulation specialists for a tailored technical consultation, custom PyAnsys proof-of-concept, or 30-day Ansys evaluation license.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button

@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "CADFEM APAC — Simulation is More Than Software",
+  title: "SimuTech APAC — Simulation is More Than Software",
   description: "Enterprise-grade engineering simulation technology, Ansys licensing, consultancy services, and specialized training for ambitious engineering teams across APAC.",
 };
 

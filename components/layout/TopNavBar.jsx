@@ -134,7 +134,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
         <div className="flex items-center shrink-0">
           <Link href="/" onClick={() => setOpenMegaMenu(null)} className="flex items-center gap-2">
             <span className="font-extrabold text-2xl tracking-tighter text-[#001738] font-['Montserrat']">
-              CADFEM
+              SimuTech
             </span>
           </Link>
         </div>
@@ -180,7 +180,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
                 : "text-[#1e293b] hover:text-[#0057b8]"
             }`}
           >
-            <span>CADFEM Informs</span>
+            <span>SimuTech Informs</span>
             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${
               openMegaMenu === "informs" ? "rotate-180 text-[#0057b8]" : "opacity-60"
             }`} />
@@ -373,7 +373,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
                         Explore Our Full Product Range
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-7">
-                        Discover CADFEM&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics and beyond.
+                        Discover SimuTech&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics and beyond.
                       </p>
                       <Link
                         href="/products"
@@ -470,7 +470,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
                         Explore Our Full Product Range
                       </h4>
                       <p className="text-xs text-slate-500 leading-relaxed mb-6">
-                        Discover CADFEM&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics and beyond.
+                        Discover SimuTech&apos;s complete portfolio of Ansys simulation software — from structural and fluid dynamics to electromagnetics and beyond.
                       </p>
                       <Link
                         href="/products"
@@ -522,7 +522,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
                 className="flex items-center gap-2"
               >
                 <span className="font-extrabold text-2xl tracking-tighter text-[#001738] font-['Montserrat']">
-                  CADFEM
+                  SimuTech
                 </span>
               </Link>
 
@@ -623,7 +623,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
                   onClick={() => toggleMegaMenu("mobile-informs")}
                   className="w-full flex items-center justify-between text-base font-semibold font-['Montserrat'] text-[#001738] cursor-pointer"
                 >
-                  <span>CADFEM Informs</span>
+                  <span>SimuTech Informs</span>
                   <div className="w-8 h-8 rounded-lg bg-[#f8fafc] flex items-center justify-center text-slate-600">
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                       openMegaMenu === "mobile-informs" ? "rotate-180 text-[#0057b8]" : ""
