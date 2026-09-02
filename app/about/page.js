@@ -21,11 +21,13 @@ import {
   ArrowUpRight,
   TrendingUp,
   HeartHandshake,
-  Activity,
-  Play,
+  Check,
+  Globe,
+  ChevronRight,
+  Target,
+  BarChart3,
   Flame,
-  Radio,
-  Maximize2
+  PhoneCall
 } from "lucide-react";
 import TopNavBar from "@/components/layout/TopNavBar";
 import Footer from "@/components/layout/Footer";
@@ -33,55 +35,86 @@ import TrialModal from "@/components/modals/TrialModal";
 
 export default function AboutPage() {
   const [trialOpen, setTrialOpen] = useState(false);
-  const [activeDomain, setActiveDomain] = useState("structures");
+  const [activeTab, setActiveTab] = useState("mission"); // 'mission' | 'heritage' | 'network'
 
-  const domains = [
-    { id: "structures", label: "Structural Mechanics", solver: "Ansys Mechanical", metric: "124.5 kN Yield Stress" },
-    { id: "fluids", label: "Fluids & Aerodynamics", solver: "Ansys Fluent / CFX", metric: "Mach 5.2 Shock Flow" },
-    { id: "em", label: "Electromagnetics & RF", solver: "Ansys HFSS / Maxwell", metric: "77 GHz Radar Array" },
-    { id: "digital-twins", label: "AI & Digital Twins", solver: "Ansys Twin Builder", metric: "Real-time ROM (99.9%)" },
-  ];
+  const heroPillars = {
+    mission: {
+      tag: "THE MISSION",
+      headline: "De-risking Innovation for Asia-Pacific's Engineering Pioneers.",
+      body: "SimuTech bridges advanced Ansys numerical simulation software with specialized domain engineering, custom PyAnsys automation, and certified training to help engineering teams build safer, faster, and more efficient physical products.",
+      stats: [
+        { label: "Client Retention", val: "99.4%" },
+        { label: "Active Deployments", val: "5,700+" },
+      ],
+      ctaText: "Schedule Technical Consultation",
+      ctaHref: "#",
+    },
+    heritage: {
+      tag: "40+ YEARS HERITAGE",
+      headline: "From Finite Element Method Pioneers to Regional Authority.",
+      body: "Established in 1982 during the dawn of computerized simulation, our group has spent over four decades mastering FEA, CFD, electromagnetics, and digital twin workflows alongside the world's most rigorous R&D departments.",
+      stats: [
+        { label: "Founded", val: "1982" },
+        { label: "CAE Engineers", val: "600+" },
+      ],
+      ctaText: "Explore Our Full Story",
+      ctaHref: "#story",
+    },
+    network: {
+      tag: "ANSYS ELITE STATUS",
+      headline: "Premier Technical Accreditations & Direct R&D Hotlines.",
+      body: "As an Ansys Elite Channel Partner and core member of the global TechNet Alliance, SimuTech delivers localized engineering support across 8 Asia-Pacific hubs backed by direct access to global simulation roadmaps.",
+      stats: [
+        { label: "APAC Hubs", val: "8 Countries" },
+        { label: "Partner Tier", val: "Elite Channel" },
+      ],
+      ctaText: "View Regional Network",
+      ctaHref: "#partners",
+    },
+  };
 
-  const stats = [
-    { value: "40+", label: "Years of Experience", sub: "Founded in 1982" },
-    { value: "5,700+", label: "Active Customers", sub: "Enterprise & SMEs" },
-    { value: "600+", label: "Employees Globally", sub: "Top CAE Specialists" },
-    { value: "35+", label: "Global & APAC Offices", sub: "Local Engineering Teams" },
+  const timeline = [
+    { year: "1982", title: "Inception & FEA", desc: "Pioneering finite element analysis for industrial manufacturing." },
+    { year: "2000", title: "Ansys Elite Status", desc: "Recognized as top-tier channel partner for CAE solutions." },
+    { year: "2018", title: "AI & PyAnsys", desc: "Automating simulation workflows with custom Python scripts & ROMs." },
+    { year: "2026", title: "APAC Digital Twins", desc: "Delivering real-time multi-physics twins across 8 regional hubs." },
   ];
 
   const apacHubs = [
-    { country: "India", city: "Bengaluru, Pune, Hyderabad", role: "R&D & Engineering Hub" },
-    { country: "Singapore", city: "Singapore", role: "Regional HQ & Finance" },
-    { country: "Malaysia", city: "Kuala Lumpur", role: "Consulting & Automotive Support" },
-    { country: "Indonesia", city: "Jakarta", role: "Energy & Infrastructure Services" },
+    { country: "India", city: "Bengaluru, Pune, Hyderabad", role: "R&D & Engineering Center" },
+    { country: "Singapore", city: "Singapore", role: "APAC Regional Headquarters" },
+    { country: "Malaysia", city: "Kuala Lumpur", role: "Automotive & Industrial Consulting" },
+    { country: "Indonesia", city: "Jakarta", role: "Energy & Infrastructure Solutions" },
     { country: "Thailand", city: "Bangkok", role: "Electronics & EV Manufacturing" },
     { country: "Vietnam", city: "Ho Chi Minh City", role: "Semiconductors & High Tech" },
-    { country: "Japan", city: "Tokyo", role: "Advanced Robotics & Materials" },
-    { country: "Australia", city: "Melbourne & Sydney", role: "Aerospace & Defense Consulting" },
+    { country: "Japan", city: "Tokyo", role: "Advanced Materials & Robotics" },
+    { country: "Australia", city: "Melbourne & Sydney", role: "Aerospace & Defense Services" },
   ];
 
   const values = [
     {
       icon: Cpu,
       title: "Physics-First Precision",
-      desc: "Every recommendation is backed by validated numerical methods, empirical testing, and high-fidelity multi-physics rigor.",
+      desc: "Every recommendation is grounded in rigorous numerical methods, validated solver physics, and empirical correlation.",
     },
     {
-      icon: Sparkles,
-      title: "AI & PyAnsys Automation",
-      desc: "We supercharge traditional simulation loops with custom Python automation, neural surrogates, and cloud HPC pipelines.",
+      icon: Workflow,
+      title: "PyAnsys & Process Automation",
+      desc: "We build bespoke automation apps, neural surrogates, and cloud HPC pipelines that cut engineering cycle times by up to 70%.",
     },
     {
       icon: HeartHandshake,
-      title: "Co-Engineering Partnership",
-      desc: "We don't just sell software licenses — we embed our specialists within your R&D teams to de-risk complex product launches.",
+      title: "Dedicated Co-Engineering",
+      desc: "We embed our senior simulation specialists alongside your engineering teams to solve urgent technical challenges and de-risk product launches.",
     },
     {
       icon: GraduationCap,
-      title: "Lifelong Knowledge Transfer",
-      desc: "Through our esocaet academy and certified training courses, we empower your internal engineers with state-of-the-art CAE skills.",
+      title: "Accredited Knowledge Transfer",
+      desc: "Through our esocaet academy and certified training courses, we upskill your internal workforce into high-performing simulation practitioners.",
     },
   ];
+
+  const currentPillar = heroPillars[activeTab];
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#001738] font-['Montserrat']">
@@ -91,140 +124,161 @@ export default function AboutPage() {
       />
 
       <main className="flex-1">
-        {/* 1. Ultra-Modern Premium Hero Section */}
-        <section className="relative w-full bg-[#010816] text-white pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-white/10">
-          {/* Futuristic Background Grid & Ambient Volumetric Glows */}
-          <div 
-            className="absolute inset-0 opacity-15 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(#38bdf8 1px, transparent 1px), radial-gradient(#0057b8 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-              backgroundPosition: "0 0, 20px 20px"
-            }}
-          />
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#0057b8]/25 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#38bdf8]/15 rounded-full blur-[100px] pointer-events-none" />
+        {/* 1. COMPLETELY REIMAGINED HERO: Architectural Magazine-Style Canvas */}
+        <section className="relative w-full bg-[#f8fafc] border-b border-[#e2e8f0] pt-12 pb-16 lg:pt-16 lg:pb-20">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
+            {/* Top Corporate Meta Header */}
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-[#e2e8f0]">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 bg-[#001738] text-white text-[11px] font-mono font-bold uppercase tracking-widest rounded-md">
+                  SIMUTECH APAC
+                </span>
+                <span className="text-xs font-semibold text-slate-500">
+                  Engineering Simulation Authority Since 1982
+                </span>
+              </div>
+              <div className="flex items-center gap-6 text-xs font-bold text-[#0057b8]">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-[#0057b8]" />
+                  Ansys Elite Partner
+                </span>
+                <span className="flex items-center gap-1.5 hidden sm:flex">
+                  <Globe className="w-4 h-4 text-[#0057b8]" />
+                  8 APAC Hubs
+                </span>
+              </div>
+            </div>
 
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-8 relative z-10">
-            {/* Top Row: Hero Text & 3D Hologram Stage */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Left Column: Vision & Action */}
-              <div className="lg:col-span-6 space-y-6">
-                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#001f4d]/80 border border-[#0057b8]/50 text-xs font-bold text-[#38bdf8] backdrop-blur-md shadow-lg shadow-[#0057b8]/20">
-                  <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-ping" />
-                  <span>ANSYS ELITE CHANNEL PARTNER APAC</span>
-                </div>
-
-                <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-white tracking-tight leading-[1.12]">
-                  Pioneering the Science of <br />
-                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#60a5fa] to-[#93c5fd] bg-clip-text text-transparent">
-                    Virtual Engineering.
-                  </span>
-                </h1>
-
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
-                  For over four decades, <strong className="text-white font-semibold">SimuTech APAC</strong> has empowered ambitious aerospace, automotive, energy, and high-tech leaders to transform complex multi-physics challenges into decisive market advantages.
-                </p>
-
-                {/* Physics Domain Selector Pills */}
-                <div className="space-y-2 pt-2">
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">
-                    Multi-Physics Domains
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {domains.map((d) => (
+            {/* Main Interactive Split Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+              {/* Left Column: Interactive Tabbed Narrative Engine */}
+              <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-8 sm:p-12 border border-[#e2e8f0] shadow-sm">
+                <div>
+                  {/* Segmented Control Tabs */}
+                  <div className="flex items-center gap-2 p-1.5 bg-[#f1f5f9] rounded-xl w-fit mb-8">
+                    {[
+                      { id: "mission", label: "01. Mission" },
+                      { id: "heritage", label: "02. Heritage" },
+                      { id: "network", label: "03. Credentials" },
+                    ].map((tab) => (
                       <button
-                        key={d.id}
-                        onClick={() => setActiveDomain(d.id)}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                          activeDomain === d.id
-                            ? "bg-[#0057b8] text-white border border-[#38bdf8] shadow-md shadow-[#0057b8]/40"
-                            : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          activeTab === tab.id
+                            ? "bg-white text-[#001738] shadow-sm"
+                            : "text-slate-500 hover:text-[#001738]"
                         }`}
                       >
-                        {d.label}
+                        {tab.label}
                       </button>
                     ))}
                   </div>
+
+                  {/* Active Pillar Tag */}
+                  <div className="text-xs font-mono font-bold text-[#0057b8] tracking-wider uppercase mb-3">
+                    {currentPillar.tag}
+                  </div>
+
+                  {/* Large Headline */}
+                  <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001738] tracking-tight leading-[1.18] mb-6 animate-in fade-in-50 duration-300">
+                    {currentPillar.headline}
+                  </h1>
+
+                  {/* Body Copy */}
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-8 animate-in fade-in-50 duration-300">
+                    {currentPillar.body}
+                  </p>
                 </div>
 
-                {/* CTAs */}
-                <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <button
-                    onClick={() => setTrialOpen(true)}
-                    className="bg-[#0057b8] hover:bg-[#004493] text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all shadow-xl shadow-[#0057b8]/40 active:scale-95 cursor-pointer"
-                  >
-                    <span>Partner With Us</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                {/* Bottom Interactive Strip */}
+                <div className="pt-6 border-t border-[#f1f5f9] flex flex-wrap items-center justify-between gap-6">
+                  {/* Micro KPI pair */}
+                  <div className="flex items-center gap-8">
+                    {currentPillar.stats.map((s) => (
+                      <div key={s.label}>
+                        <div className="text-2xl font-extrabold text-[#001738] font-['Montserrat']">
+                          {s.val}
+                        </div>
+                        <div className="text-xs text-slate-500 font-medium">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
 
+                  {/* CTA */}
                   <button
                     onClick={() => setTrialOpen(true)}
-                    className="bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full flex items-center gap-2 transition-all cursor-pointer"
+                    className="bg-[#001738] hover:bg-[#00285e] text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-xl flex items-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer font-['Montserrat']"
                   >
-                    <Play className="w-3.5 h-3.5 fill-white text-white" />
-                    <span>Watch Overview</span>
+                    <span>{currentPillar.ctaText}</span>
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
 
-              {/* Right Column: 3D Holographic Stage with Live HUD Telemetry */}
-              <div className="lg:col-span-6">
-                <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-2 group">
-                  {/* Holographic Aerothermal Simulation Visual */}
-                  <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                    <img
-                      src="/about-hero-hologram.jpg"
-                      alt="SimuTech 3D Holographic Aerothermal Multi-Physics Engine Simulation"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    />
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#000d24]/90 via-transparent to-[#000d24]/40" />
-
-                    {/* Floating Top-Left Status Badge */}
-                    <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#001738]/85 border border-[#38bdf8]/40 rounded-full px-3.5 py-1.5 text-[11px] font-mono text-[#38bdf8] backdrop-blur-md shadow-lg">
-                      <Activity className="w-3.5 h-3.5 animate-pulse text-[#38bdf8]" />
-                      <span>LIVE SOLVER RUNNING</span>
+              {/* Right Column: Multi-Layered Visual & Accreditation Showcase */}
+              <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+                {/* Visual Card */}
+                <div className="relative rounded-3xl overflow-hidden border border-[#e2e8f0] shadow-sm group aspect-[4/3] bg-[#001738]">
+                  <img
+                    src="/about-cadfem-team.jpg"
+                    alt="SimuTech multi-physics simulation engineers"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001738]/90 via-[#001738]/30 to-transparent" />
+                  
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-mono font-bold tracking-wider uppercase mb-2">
+                      <Users className="w-3.5 h-3.5 text-[#38bdf8]" />
+                      <span>600+ SIMULATION SPECIALISTS</span>
                     </div>
+                    <h3 className="text-base sm:text-lg font-bold leading-snug">
+                      Embedded in Leading R&amp;D Teams Across 8 Asia-Pacific Countries.
+                    </h3>
+                  </div>
+                </div>
 
-                    {/* Floating Top-Right Solver Pill */}
-                    <div className="absolute top-4 right-4 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 text-[11px] font-mono text-white backdrop-blur-md">
-                      {domains.find(d => d.id === activeDomain)?.solver}
+                {/* Corporate Accreditation Pill Strip */}
+                <div className="bg-white rounded-2xl p-5 border border-[#e2e8f0] shadow-xs flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#f1f5f9] text-[#0057b8] flex items-center justify-center shrink-0">
+                      <Award className="w-5 h-5" />
                     </div>
-
-                    {/* Floating Bottom HUD Panel */}
-                    <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#00122e]/90 border border-white/15 backdrop-blur-md flex items-center justify-between">
-                      <div>
-                        <div className="text-[10px] font-mono text-[#38bdf8] uppercase tracking-wider font-bold">
-                          Selected Physics Benchmark
-                        </div>
-                        <div className="text-sm font-bold text-white">
-                          {domains.find(d => d.id === activeDomain)?.metric}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-[10px] text-slate-400 font-mono">Convergence</div>
-                        <div className="text-xs font-bold text-emerald-400">99.99% Rigor</div>
-                      </div>
+                    <div>
+                      <div className="text-xs font-bold text-[#001738]">Ansys Elite Partner</div>
+                      <div className="text-[11px] text-slate-500">Highest Regional Channel Tier</div>
                     </div>
                   </div>
+                  <Link
+                    href="/products"
+                    className="text-xs font-bold text-[#0057b8] hover:underline flex items-center gap-1"
+                  >
+                    <span>Products</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Bottom 4 Modern KPI Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16 pt-12 border-t border-white/10">
-              {stats.map((s) => (
+            {/* 4-Pillar Milestone Timeline Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+              {timeline.map((item, idx) => (
                 <div 
-                  key={s.label} 
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#38bdf8]/40 hover:bg-white/10 transition-all backdrop-blur-sm group"
+                  key={item.year}
+                  className="bg-white rounded-2xl p-5 border border-[#e2e8f0] shadow-2xs hover:border-[#0057b8] transition-all"
                 >
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#38bdf8] tracking-tight mb-1 group-hover:scale-105 transition-transform origin-left">
-                    {s.value}
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-[#f1f5f9] text-[#0057b8]">
+                      {item.year}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-mono">Pillar 0{idx + 1}</span>
                   </div>
-                  <div className="text-sm font-bold text-white mb-0.5">{s.label}</div>
-                  <div className="text-xs text-slate-400 font-normal">{s.sub}</div>
+                  <h4 className="text-sm font-bold text-[#001738] mb-1 font-['Montserrat']">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -232,12 +286,12 @@ export default function AboutPage() {
         </section>
 
         {/* 2. Our Story & Engineering Heritage */}
-        <section id="story" className="py-20 lg:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+        <section id="story" className="py-20 lg:py-28 bg-[#ffffff] border-b border-[#e2e8f0]">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               {/* Left Visual */}
               <div className="lg:col-span-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#e2e8f0] group">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#e2e8f0] group">
                   <img
                     src="/about-cadfem-team.jpg"
                     alt="SimuTech engineers collaborating on simulation models"
@@ -292,7 +346,7 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Ansys Elite Partner & TechNet Alliance */}
-        <section id="partners" className="py-20 lg:py-28 bg-white border-b border-[#e2e8f0]">
+        <section id="partners" className="py-20 lg:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0057b8] mb-3">
@@ -369,7 +423,7 @@ export default function AboutPage() {
         </section>
 
         {/* 4. APAC Regional Footprint */}
-        <section className="py-20 lg:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+        <section className="py-20 lg:py-28 bg-[#ffffff] border-b border-[#e2e8f0]">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-5 space-y-6">
@@ -420,7 +474,7 @@ export default function AboutPage() {
         </section>
 
         {/* 5. Innovation Lab & Supercomputing */}
-        <section id="culture" className="py-20 lg:py-28 bg-white border-b border-[#e2e8f0]">
+        <section id="culture" className="py-20 lg:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <div className="lg:col-span-6 space-y-6">
@@ -438,11 +492,11 @@ export default function AboutPage() {
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-[#f8fafc] border border-[#e2e8f0]">
+                  <div className="p-4 rounded-xl bg-white border border-[#e2e8f0]">
                     <div className="text-xl font-bold text-[#001738] mb-1">10,000+ Cores</div>
                     <div className="text-xs text-slate-500">HPC Cluster Testing Capacity</div>
                   </div>
-                  <div className="p-4 rounded-xl bg-[#f8fafc] border border-[#e2e8f0]">
+                  <div className="p-4 rounded-xl bg-white border border-[#e2e8f0]">
                     <div className="text-xl font-bold text-[#001738] mb-1">99.9% Accuracy</div>
                     <div className="text-xs text-slate-500">Empirically Validated Solvers</div>
                   </div>
@@ -451,7 +505,7 @@ export default function AboutPage() {
 
               {/* Right Visual */}
               <div className="lg:col-span-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#e2e8f0] group">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#e2e8f0] group">
                   <img
                     src="/about-cadfem-innovation.jpg"
                     alt="SimuTech Innovation and Supercomputing Lab"
@@ -473,7 +527,7 @@ export default function AboutPage() {
         </section>
 
         {/* 6. Core Engineering Values */}
-        <section id="careers" className="py-20 lg:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+        <section id="careers" className="py-20 lg:py-28 bg-white border-b border-[#e2e8f0]">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0057b8] mb-3">
@@ -492,7 +546,7 @@ export default function AboutPage() {
               {values.map((v) => {
                 const IconComp = v.icon;
                 return (
-                  <div key={v.title} className="p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#0057b8] shadow-2xs hover:shadow-lg transition-all flex flex-col justify-between">
+                  <div key={v.title} className="p-6 rounded-2xl bg-[#f8fafc] border border-[#e2e8f0] hover:border-[#0057b8] shadow-2xs hover:shadow-lg transition-all flex flex-col justify-between">
                     <div>
                       <div className="w-11 h-11 rounded-xl bg-[#00122e] text-[#38bdf8] flex items-center justify-center mb-5">
                         <IconComp className="w-5 h-5" />
