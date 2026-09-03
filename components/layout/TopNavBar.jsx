@@ -111,7 +111,7 @@ export default function TopNavBar({ onOpenTrial, onOpenContact }) {
     { label: "About Us", href: "/about", icon: Users },
     { label: "Careers", href: "/about#careers", icon: Briefcase },
     { label: "Culture Book", href: "/about#culture", icon: BookOpen },
-    { label: "Our Story", href: "/about#story", icon: Library },
+    { label: "Our Story", href: "/our-story", icon: Library },
   ];
 
   const informsCol1 = [
